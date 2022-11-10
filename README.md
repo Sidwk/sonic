@@ -210,7 +210,7 @@ $ sudo /lib/modules
 根据你的你的内核源码目录进行执行命令
 
 ```shell
-$ sudo ./configure --with-linux=/lib/modules/5.15.0-46-generic(你自己对应的目录，我这里是就是5.15.0-46-generic）/build
+$ sudo ./configure --with-linux=/lib/modules/5.15.0-46-generic(你自己对应的目录，我这里的就是5.15.0-46-generic）/build
 ```
 
 命令执行过后，执行命令进行安装操作，安装的时间挺长，注意各种错误提示。
