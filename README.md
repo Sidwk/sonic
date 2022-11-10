@@ -129,7 +129,7 @@ For more examples and ideas, visit:
 
 当输出以下内容的时候，就说明安装好了。
 
-**ps:** 如果出现这样
+**PS:** 如果出现这样
 
 ```shell
 $ docker run --rm hello-world
