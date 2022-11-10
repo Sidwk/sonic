@@ -184,9 +184,9 @@ $ sudo uname -a
 
 然后根据自己的内核挑选合适的版本，如果linux内核是5.8+的，那么用ovs-3.0+的就可以。
 
-OVS对应版本的下载的网页在这个位置https://www.openvswitch.org/download/
-
 ![image-20221110153305536](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110153305536.png)
+
+OVS对应版本的下载的网页在这个位置https://www.openvswitch.org/download/
 
 使用`wegt`下载数据包，或者在网页下载好之后使用`lrzsz`传进来
 
