@@ -150,7 +150,8 @@ See 'docker run --help'.
 
 是因为网络问题，再次输入`$ docker run --rm hello-world`进行尝试。
 
-docker有一个很全面的介绍网站 https://yeasy.gitbook.io/docker_practice/，基本遇到的问题都能在这里解决。
+docker有一个很全面的介绍网站 https://yeasy.gitbook.io/docker_practice/
+基本遇到的问题都能在这里解决。
 
 ------
 
