@@ -322,7 +322,8 @@ sudo docker load < docker-sonic-p4.gz
 
 但是这个`docker-sonic-p4.gz`包docker已经不再支持下载，所以这个`wget`操作是没办法把包下载下来的。
 
-但是其官方仓库（https://hub.docker.com/r/alihasanahmedkhan/docker-sonic-p4）里面还是有这个包的，所以可以直接使用下面命令把包下载下来。
+但是其官方仓库（https://hub.docker.com/r/alihasanahmedkhan/docker-sonic-p4
+）里面还是有这个包的，所以可以直接使用下面命令把包下载下来。
 
 ```shell
 $ sudo docker pull alihasanahmedkhan/docker-sonic-p4
