@@ -185,7 +185,7 @@ $ sudo uname -a
 
 OVS对应版本的下载的网页在这个位置https://www.openvswitch.org/download/
 
-![image-20221110153305536](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110153305536.png)
+![image-20221110153305536](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110153305536.png)
 
 使用`wegt`下载数据包，或者在网页下载好之后使用`lrzsz`传进来
 
