@@ -234,7 +234,7 @@ $ sudo /sbin/modprobe openvswitch
 $ sudo /sbin/lsmod | grep openvswitch
 ```
 
-![image-20221110160013701](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110160013701.png)
+![image-20221110160013701](./typora-user-images/image-20221110160013701.png)
 
 **PS:**这种情况就是加载进去了。
 
@@ -247,7 +247,7 @@ $ sudo ovs-ctl start
 
 当出现下面这种，即成功。
 
-![image-20221110160413020](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110160413020.png)
+![image-20221110160413020](./typora-user-images/image-20221110160413020.png)
 
 启动ovsdb-server服务，首先执行命令：`export PATH=$PATH:/usr/local/share/openvswitch/scripts`导入环境变量，然后执行命令：`ovs-ctl --no-ovs-vswitchd start`。
 
@@ -258,7 +258,7 @@ $ sudo ovs-ctl --no-ovs-vswitchd start
 
 执行完成后，如下图所示即代表`ovsdb-server`服务启动成功。
 
-![image-20221110160614240](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110160614240.png)
+![image-20221110160614240](./typora-user-images/image-20221110160614240.png)
 
 建立Open vSwitch配置文件和数据库，并根据ovsdb模板创建ovsdb数据库，用于存储虚拟交换机的配置信息。
 
@@ -297,7 +297,7 @@ $ sudo ovs-vswitchd --pidfile --detach
 $ sudo ps auxf |grep ovs
 ```
 
-![image-20221110162714182](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110162714182.png)
+![image-20221110162714182](./typora-user-images/image-20221110162714182.png)
 
 通过如下命令查看所安装OVS的版本号。
 
@@ -305,7 +305,7 @@ $ sudo ps auxf |grep ovs
 $ sudo ovs-vsctl --version
 ```
 
-![image-20221110162928315](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110162928315.png)
+![image-20221110162928315](./typora-user-images/image-20221110162928315.png)
 
 这样就算安装好OVS了。
 
@@ -367,7 +367,7 @@ $ sudo docker tag alihasanahmedkhan/docker-sonic-p4 docker-sonic-p4:latest
 $ sudo docker image list
 ```
 
-![image-20221110170448930](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110170448930.png)
+![image-20221110170448930](./typora-user-images/image-20221110170448930.png)
 
 之后在解压缩后的p4-test文件夹中运行`start.sh`文件
 
@@ -381,7 +381,7 @@ $ sudo ./start.sh
 $ sudo docker ps
 ```
 
-![image-20221110170849480](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110170849480.png)
+![image-20221110170849480](./typora-user-images/image-20221110170849480.png)
 
 稍等一段时间之后，运行`test.sh`测试host1与host2的连通性
 
@@ -389,7 +389,7 @@ $ sudo docker ps
 $ sudo ./test.sh
 ```
 
-![image-20221110171417949](https://github.com/Sidwk/sonic/blob/main/typora-user-images/image-20221110171417949.png)
+![image-20221110171417949](./typora-user-images/image-20221110171417949.png)
 
 之后使用`./stop.sh`结束仿真
 
