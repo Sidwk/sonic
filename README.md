@@ -183,7 +183,7 @@ $ sudo uname -a
 
 然后根据自己的内核挑选合适的版本，如果linux内核是5.8+的，那么用ovs-3.0+的就可以。
 
-![image-20221110153305536](.\typora-user-images\image-20221110153305536.png)
+![image-20221110153305536](\typora-user-images\image-20221110153305536.png)
 
 OVS对应版本的下载的网页在这个位置https://www.openvswitch.org/download/
 
