@@ -129,7 +129,7 @@ For more examples and ideas, visit:
 
 当输出以下内容的时候，就说明安装好了。
 
-**PS:** 如果出现这样
+**ps:** 如果出现这样
 
 ```shell
 $ docker run --rm hello-world
@@ -150,8 +150,7 @@ See 'docker run --help'.
 
 是因为网络问题，再次输入`$ docker run --rm hello-world`进行尝试。
 
-docker有一个很全面的介绍网站 https://yeasy.gitbook.io/docker_practice/
-基本遇到的问题都能在这里解决。
+docker有一个很全面的介绍网站 https://yeasy.gitbook.io/docker_practice/，基本遇到的问题都能在这里解决。
 
 ------
 
@@ -184,7 +183,7 @@ $ sudo uname -a
 
 然后根据自己的内核挑选合适的版本，如果linux内核是5.8+的，那么用ovs-3.0+的就可以。
 
-![image-20221110153305536](./typora-user-images/image-20221110153305536.png)
+![image-20221110153305536](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110153305536.png)
 
 OVS对应版本的下载的网页在这个位置https://www.openvswitch.org/download/
 
@@ -234,7 +233,7 @@ $ sudo /sbin/modprobe openvswitch
 $ sudo /sbin/lsmod | grep openvswitch
 ```
 
-![image-20221110160013701](./typora-user-images/image-20221110160013701.png)
+![image-20221110160013701](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110160013701.png)
 
 **PS:**这种情况就是加载进去了。
 
@@ -247,7 +246,7 @@ $ sudo ovs-ctl start
 
 当出现下面这种，即成功。
 
-![image-20221110160413020](./typora-user-images/image-20221110160413020.png)
+![image-20221110160413020](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110160413020.png)
 
 启动ovsdb-server服务，首先执行命令：`export PATH=$PATH:/usr/local/share/openvswitch/scripts`导入环境变量，然后执行命令：`ovs-ctl --no-ovs-vswitchd start`。
 
@@ -258,7 +257,7 @@ $ sudo ovs-ctl --no-ovs-vswitchd start
 
 执行完成后，如下图所示即代表`ovsdb-server`服务启动成功。
 
-![image-20221110160614240](./typora-user-images/image-20221110160614240.png)
+![image-20221110160614240](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110160614240.png)
 
 建立Open vSwitch配置文件和数据库，并根据ovsdb模板创建ovsdb数据库，用于存储虚拟交换机的配置信息。
 
@@ -297,7 +296,7 @@ $ sudo ovs-vswitchd --pidfile --detach
 $ sudo ps auxf |grep ovs
 ```
 
-![image-20221110162714182](./typora-user-images/image-20221110162714182.png)
+![image-20221110162714182](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110162714182.png)
 
 通过如下命令查看所安装OVS的版本号。
 
@@ -305,7 +304,7 @@ $ sudo ps auxf |grep ovs
 $ sudo ovs-vsctl --version
 ```
 
-![image-20221110162928315](./typora-user-images/image-20221110162928315.png)
+![image-20221110162928315](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110162928315.png)
 
 这样就算安装好OVS了。
 
@@ -336,8 +335,7 @@ sudo docker load < docker-sonic-p4.gz
 
 但是这个`docker-sonic-p4.gz`包docker已经不再支持下载，所以这个`wget`操作是没办法把包下载下来的。
 
-但是其官方仓库（https://hub.docker.com/r/alihasanahmedkhan/docker-sonic-p4
-）里面还是有这个包的，所以可以直接使用下面命令把包下载下来。
+但是其官方仓库（https://hub.docker.com/r/alihasanahmedkhan/docker-sonic-p4）里面还是有这个包的，所以可以直接使用下面命令把包下载下来。
 
 ```shell
 $ sudo docker pull alihasanahmedkhan/docker-sonic-p4
@@ -367,7 +365,7 @@ $ sudo docker tag alihasanahmedkhan/docker-sonic-p4 docker-sonic-p4:latest
 $ sudo docker image list
 ```
 
-![image-20221110170448930](./typora-user-images/image-20221110170448930.png)
+![image-20221110170448930](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110170448930.png)
 
 之后在解压缩后的p4-test文件夹中运行`start.sh`文件
 
@@ -381,7 +379,7 @@ $ sudo ./start.sh
 $ sudo docker ps
 ```
 
-![image-20221110170849480](./typora-user-images/image-20221110170849480.png)
+![image-20221110170849480](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110170849480.png)
 
 稍等一段时间之后，运行`test.sh`测试host1与host2的连通性
 
@@ -389,7 +387,7 @@ $ sudo docker ps
 $ sudo ./test.sh
 ```
 
-![image-20221110171417949](./typora-user-images/image-20221110171417949.png)
+![image-20221110171417949](C:\Users\WK\AppData\Roaming\Typora\typora-user-images\image-20221110171417949.png)
 
 之后使用`./stop.sh`结束仿真
 
@@ -399,3 +397,75 @@ $ sudo ./stop.sh
 
 ### **至此sonic安装完成**
 
+
+
+### SONIC-P4配置详情
+
+------
+
+再start.sh中，我们已经将配置文件夹挂载到交换机容器中，位于`/对应的交换机名称文件夹`。最重要的配置`/sonic/scripts/startup.sh`、`/sonic/etc/config_db/vlan_config.json`和`/sonic/etc/quagga/bgpd.conf`。
+
+在`/sonic/scripts/startup.sh`中，启动了所有 SONiC 服务和一个 P4 软件开关。P4软件开关由这一行启动（见supervisord.conf）
+
+```shell
+simple_switch --log-console -i 1@eth1 -i 2@eth2 ...
+```
+
+它将接口 eth1 绑定到 P4 软件交换机的端口 1，eth2 绑定到端口 2，依此类推。这些 ethX 接口通常被称为*前面板接口*，并直接被 P4 交换机用于承载数据平面数据包。然而，SONiC 在另一种类型的接口上运行，称为*主机接口*。*主机接口*用于 SONiC 控制平面，不承载数据平面数据包。*主机接口*命名为 EthernetX 。我们在主机接口上配置对等 IP 和 MTU。SONiC 从*主机接口*读取 IP 和 MTU 等配置，然后使用 SAI 在 P4 软件交换机上配置这些值。*主机接口*之间的映射和交换机端口指定在`/port_config.ini`：
+
+```shell
+# alias         lanes
+Ethernet0       1
+Ethernet1       2
+...
+```
+
+连同 中的 simple_switch 命令`/sonic/scripts/startup.sh`，我们配置了这个映射 Ethernet0 --> lane 1 --> eth1。它本质上是*主机接口*和*前面板接口*之间的映射。
+
+`/sonic/etc/config_db/vlan_config.json`配置本次测试使用的switch vlan接口，使用ConfigDB接口，详见[这里：](https://github.com/Azure/SONiC/wiki/Configuration)
+
+```shell
+{
+    "VLAN": {
+        "Vlan15": {
+            "members": [
+                "Ethernet0"
+            ], 
+            "vlanid": "15"
+        }, 
+        "Vlan10": {
+            "members": [
+                "Ethernet1"
+            ], 
+            "vlanid": "10"
+        }
+    },
+    "VLAN_MEMBER": {
+        "Vlan15|Ethernet0": {
+            "tagging_mode": "untagged"
+        },
+        "Vlan10|Ethernet1": {
+            "tagging_mode": "untagged"
+        }
+    },
+    "VLAN_INTERFACE": {
+        "Vlan15|10.0.0.0/31": {},
+        "Vlan10|192.168.1.1/24": {}
+    }
+}
+```
+
+`/sonic/etc/quagga/bgpd.conf`在交换机上配置 BGP 会话。这是 switch1 的 BGP 配置，它使用对等 IP 10.0.0.0/31 与 switch2 对等，并宣布 192.168.1.0/24。
+
+```shell
+router bgp 10001                        
+  bgp router-id 192.168.1.1             
+  network 192.168.1.0 mask 255.255.255.0
+  neighbor 10.0.0.1 remote-as 10002     
+  neighbor 10.0.0.1 timers 1 3          
+  neighbor 10.0.0.1 send-community      
+  neighbor 10.0.0.1 allowas-in          
+  maximum-paths 64                      
+!                                       
+access-list all permit any
+```
